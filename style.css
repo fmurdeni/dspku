@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Feri Murdeni
 Author URI: http://underscores.me/
 Description: Description
-Version: 1.0.0
+Version: 1.5.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: dspku
@@ -709,7 +709,7 @@ a:hover, a:active {
   position: relative;
   top: 33px;
   left: 40px;
-  z-index: 1;
+  z-index: 9;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -1228,7 +1228,7 @@ p.site-title {
 }
 
 .footer-row.clear {
-    background: #343243;
+    background: #6c757d;
     padding: 20px;
 }
 
@@ -1279,12 +1279,14 @@ body .section {
     /* background-color: #2a2a2a5c; */
 }
 .home .banner h1 {
-    color: #1c80d7;
+    color: #fff;
     font-weight: 600;
+    text-shadow: 0 0 5px #000;
 }
 
 .banner p {
     color: #fff;
+    text-shadow: 0 0 5px #000;
 }
 .section-why h4 {
     font-size: 16px;
@@ -1342,7 +1344,7 @@ body .section {
     top: 0;
 }
 body .section.section-permintaan {
-	padding: 0;
+	/* padding: 0; */
 }
 .section.section-permintaan > .skrollable.skrollable-before {
 	padding: 50px 0;
@@ -1356,10 +1358,10 @@ body .section.section-permintaan {
     position: absolute;
 }
 .section.section-permintaan h2{
-	color: #fff;
+	/* color: #fff; */
 }
 .section.section-permintaan p, .section.section-permintaan label {
-	color: #fff;
+	/* color: #fff; */
 }
 .section.section-permintaan label, 
 .section.section-permintaan input, 
@@ -1400,13 +1402,14 @@ nav .contact-menu a:hover {
 }
 .banner.banner-page {
     height: 220px;
+    background-color: #f0f0ff;
 }
 .banner.banner-page .vc_column-inner {
     padding-top: 0;
 }
 .page-title h1 {
     font-size: 32px;
-    color: #fff;
+    color: #1e87e4;
     margin: 0;
 }
 .breadcrumb {
@@ -1457,7 +1460,7 @@ span.quiz label {
 }
 
 .banner.banner-page.banner-shop {
-    background-color: #ccc;
+    background-color: #f0f0ff;
     text-transform: uppercase;
     font-size: 24px;
 }
@@ -1472,8 +1475,10 @@ span.onsale {
     position: absolute;
     left: 10px;
     top: 10px;
-    background-color: red;
+    background-color: orange;
     z-index: 9;
+    color: #fff;
+    border-color: #fff;
 }
 
 .site-main ul.products li.product {
@@ -1536,7 +1541,7 @@ figure.woocommerce-product-gallery__wrapper {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px;
-    border: 1px solid;
+    border: 1px solid #fff;
     box-shadow: 0 0 25px #cecece;
     background-color: #f7be68a6;
 }
@@ -1571,13 +1576,35 @@ figure.woocommerce-product-gallery__wrapper {
 }
 
 .article-content p {
-	    text-overflow: ellipsis;
-	    overflow: hidden;
-	    display: -webkit-box;
-	    -webkit-line-clamp: 5;
-	    -webkit-box-orient: vertical;
-	}
-	
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+h3.entry-title a {
+    font-size: 24px;
+}
+
+.banner.banner-page.banner-404 {
+    background-color: #f0f0ff;
+}
+section.error-404.not-found.section {
+    padding: 50px 20px;
+}
+
+.woocommerce .banner p {
+    color: #1e87e4;
+}
+
+.home .banner-inner, .home .banner-inner.vc_row {
+    background-color: rgba(0,0,0,.25);
+}
+.main-navigation ul > li.current-menu-item a {
+    color: #f7be68;
+}
+
 @media all and (max-width: 1165px){
 	ul.contact-menu {
 	    margin-right: 20px;
@@ -1648,6 +1675,9 @@ figure.woocommerce-product-gallery__wrapper {
 	.article-item {
 	    width: 100%;
 	}
+	.vc_row.wpb_row.vc_row-fluid.banner.home-banner.vc_custom_1540986804746.vc_row-has-fill.vc_row-o-full-height.vc_row-o-columns-middle.vc_row-o-equal-height.vc_row-o-content-middle.vc_row-flex {
+	    background-position: 78% !important;
+	}
 }
 
 @media only screen and (max-width: 889px){
@@ -1666,7 +1696,7 @@ figure.woocommerce-product-gallery__wrapper {
 	}
 	nav.mobile-menu {
 	    position: relative;
-	    z-index: 1;
+	    z-index: 2;
 	}
 
 }

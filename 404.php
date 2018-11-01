@@ -12,46 +12,29 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			<?php echo do_shortcode('[vc_row full_width="stretch_row_content" content_placement="middle" el_class="banner banner-page banner-404"][vc_column][vc_row_inner content_placement="middle" el_class="banner-inner ui container"][vc_column_inner][vc_column_text el_class="page-title"]
+			<h1>'.__('404','pku').'</h1>
+			[/vc_column_text][/vc_column_inner][/vc_row_inner][/vc_column][/vc_row]'); ?>
 
-			<section class="error-404 not-found">
+			<section class="error-404 not-found section">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'dspku' ); ?></h1>
+					<h2 class="page-title"><?php esc_html_e( 'Maaf, halaman yang anda minta, tidak dapat ditemukan.', 'pku' ); ?></h2>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'dspku' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'dspku' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$dspku_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'dspku' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$dspku_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+					<p><?php esc_html_e( 'Sepertinya sudah tidak ada. jika anda membutuhkan bantuan, silakan', 'pku' ); ?> <a href="/kontak-kami/"><?php echo __('kontak kami.', 'pku') ?></a></p>					
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
+			<?php wp_reset_query(); wp_reset_postdata();
+	 			/*# saya menggunakan visual composer untuk merender bannernya
+				# silakan pergi ke dashboard > layout dan edit "single-footer".*/
+				$get = new WP_Query(array('name' => 'footer-single', 'post_type' => 'layout') );		
+				if( $get->have_posts() ){$get->the_post(); 
+					the_content();
+				}
+				wp_reset_query(); 
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
